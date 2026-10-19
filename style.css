@@ -41,26 +41,26 @@
 .khabar {
     position: absolute;
     top:30px;
-    left: 765px
+    left: 730px;
 }
 
 .header1 { 
     font-family:'groteskbold';
     text-align: center;
-    font-size: 63px;
+    font-size: 100px;
     position: absolute;
     top: 140px;
-    left: 210px;
+    left: 100px;
     line-height: 95%;
 
 }
 
 .bottom {
     font-family: 'grotesklight';
-    font-size: 10px;
+    font-size: 20px;
     position: absolute;
-    top: 320px;
-    left: 340px;
+    top: 420px;
+    left: 290px;
 }
 
 .order{
@@ -87,67 +87,268 @@
     height: 25px;
 }
 
-.logop {
+.site-header {
     position: absolute;
-    top: 31px;
-    left: 44px;
-}
-
-.nav{
-    background: #F6F5F3;
-    border-radius: 42px;
-    width: 500px;
-    height: 45px;
-    box-align: middle;
-    font-family: 'groteskbold';
-    position: absolute;
-    top: 30px;
-    left: 150px;
-    padding-bottom: 6px;
-    padding-left: 20px;
-
-}
-li{
-    list-style: none;
-    display: inline;
-    font-family: 'groteskbold';
-    font-size: 12px;
-
-}
-
-li a{
-    margin-right: 31px;
-}
-
-.dark{
+    z-index: 10;
+    top: 24px;
+    left: clamp(20px, 4vw, 56px);
+    display: flex;
     align-items: center;
-    margin-right: 100px;
-    
+    gap: 16px;
 }
 
-label{
-    width:50px;
-    height: 20px;
-    display:block;
-    background: #Ffffff;
-    cursor:pointer;
+.logop,
+.nav {
+    position: static;
+}
+
+.logop img {
+    display: block;
+    width: 52px;
+    height: 52px;
+}
+
+.nav1 {
+    background: #F6F5F3;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-family: 'groteskmed', sans-serif;
+    width: 500px;
     position: absolute;
-    border-radius: 200px;
-    display: inline;
+    top:30px;
+    left:20px;
+
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    list-style: none;
+    font-family: 'groteskmed', sans-serif;
+    font-size: 13px;
+}
+
+.nav li a {
+    display: inline-block;
+    margin: 0;
+    color: #26231D;
+    text-decoration: none;
+    transition: opacity 160ms ease;
+    
+}
+
+.nav li a:hover {
+    opacity: 0.58;
+}
+
+.nav li a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.nav .dark {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    position:absolute;
+    left:450px;
+}
+
+.nav .dark input {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    opacity: 0;
+}
+
+.nav .dark label.toggle {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 24px;
+    border-radius: 999px;
+    background: #DEDCD5;
+    cursor: pointer;
+    transition: background 160ms ease;
+}
+
+.nav .dark label.toggle::after {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    content: "";
+    transition: transform 160ms ease;
+}
+
+.nav .dark input:checked + label.toggle {
+    background: #6B6251;
+}
+
+.nav .dark input:checked + label.toggle::after {
+    transform: translateX(18px);
+}
+
+.nav .dark input:focus-visible + label.toggle {
+    outline: 2px solid #26231D;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        top: 16px;
+        left: 16px;
+        gap: 9px;
+    }
+
+    .logop img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav {
+        padding: 7px 11px;
+    }
+
+    .nav ul {
+        gap: 13px;
+    }
+
+    .nav li {
+        font-size: 11px;
+    }
+
+    .nav .dark label.toggle {
+        width: 36px;
+        height: 22px;
+    }
+
+    .nav .dark label.toggle::after {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav .dark input:checked + label.toggle::after {
+        transform: translateX(14px);
+    }
+}
+
+.shop-page .nav{
+    background-color:#FFDC58;
+    border-radius: 999px;
+    font-family: 'groteskmed', sans-serif;
+    width: 400px;
+    position: absolute;
+    top:10px;
+    left:80px;
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+
+.mango { 
+    position:absolute;
+    top: 200px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    font-family: 'groteskblack', sans-serif;
+    font-size: 60px;
+}
+
+.shop-page .logop img 
+{
+    display: block;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    left:1px
+    
+
+    
+}
+
+.shop-page .bottom {
+    font-family: 'groteskextrathin';
+    font-size: 25px;
+    position: absolute;
+    top: 370px;
+    left: 100px;
+}
+
+.shop-page .arrow{
+position:absolute;
+top: 200px;
+left: 100px;
+
+}
+
+.shop-page .aamtext {
+    position:absolute;
+    top: 190px;
+    left:80px;
+    z-index: -10;
+}
+
+.shop-page .semi-circle{    
+    width: 500px;         /* Width of the rectangle */
+    height: 5000px;        /* Height of the rectangle */
+    background-color: #FFDC58;
+    border-radius: 600px;   /* Optional slightly rounded corners */
+    position:absolute;
+    top: 200px;
+    left: 400px;
+
+}
+
+.shop-page .addtocart {
+    width: 170px;
+    height: 50px;
+    background-color: #FEE47D;
+    position: absolute;
+    bottom:80px;
+    left: 70px;
+    border-radius:40px;
+    border:none;
+    font-family: 'groteskmed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:16px;
     
 
 }
-input{
-    width: 0px;
-    height: 0px;
+
+.shop-page .liked {
+    width: 50px;
+    height: 50px;
+    background-color: #FEE47D;
+    position: absolute;
+    bottom:80px;
+    left: 250px;
+    border-radius:40px;
+    border:none;
+    z-index: 10;
+  
 }
 
-label::after{
-    content: "";
-    width: 40px;
-    height: 10px;
-    color: black;
-    top: 10px;
-    left: 10px;
-    border-radius: 1px;
+.shop-page .milktype { 
+    position: absolute;
+    top: 250px;
+    right: 100px;
+    font-size: 15px;
+    font-family: 'groteskblack', sans-serif;
+
 }
+
